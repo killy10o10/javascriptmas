@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <dialog>
+        <div id="dialog-container">
+            <div id="custom-countdown-container">
+                <h2>Enter Your Special Countdown</h2>
+                <form id="countdown-form">
+                    <div class="label-input">
+                        <label for="countdown-title">Title:</label>
+                        <input type="text" id="countdown-title-input" placeholder="Birthday" required>
+                    </div>
+
+                    <div>
+                        <label for="countdown-date-input">Date:</label>
+                        <input type="date" id="countdown-date-input" required>
+                    </div>
+
+                    <button class="btn" onclick="startCustomCountdown()" type="button" id="start-countdown-button">Start
+                        Countdown</button>
+                </form>
+            </div>
+        </div>
+        <button id="close-dialog" autofocus>Close</button>
+    </dialog>
+
+    <button id="toggle-dialog" class="btn">Click to set Countdown</button>
+    <h1 id="countdown-title">Christmas Countdown 🎄</h1>
+    <div class="container">
+        <div class="countdown-container">
+            <div>
+                <p id="countdown-days-display" class="countdown-display">-</p>
+                <span id="days-span">Days</span>
+            </div>
+            <div class="hours-minutes-seconds-container">
+                <div>
+                    <p id="countdown-hours-display" class="countdown-display">-</p>
+                    <span id="hours-span">Hours</span>
+                </div>
+                <div>
+                    <p id="countdown-minutes-display" class="countdown-display">-</p>
+                    <span id="minutes-span">Minutes</span>
+                </div>
+                <div>
+                    <p id="countdown-seconds-display" class="countdown-display"></p>
+                    <span id="seconds-span">Seconds</span>
+                </div>
+            </div>
+        </div>
+        <p class="countdown-text">'til Christmas!</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
