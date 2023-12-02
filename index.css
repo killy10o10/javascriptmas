@@ -1,117 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
-
-:root {
-  --wine-red: #c7375f;
-  --bright-red: #d42d2f;
-  --dark-green: #344d2f;
-  --light-green: #77a047;
-  --gold: #fac57d;
-  --snow: #f0f4f7;
-}
-
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Goblin One', serif;
+}
+
+:root {
+  --font-family: 'Karla', sans-serif;
+  --body-bg: #1e1f25;
+  --btn-bg: #000;
+  --btn-color: #cbcbcb;
+  --btn-color-hover: #fff;
+  --grad-color1: #eeaf61;
+  --grad-color2: #fb9062;
+  --grad-color3: #ee5d6c;
+  --grad-color4: #ce4993;
+  --grad-color5: #6a0d83;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 10px;
-  text-align: center;
-  color: var(--dark-green);
-  background-color: var(--snow);
+  background-color: var(--body-bg);
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  background: var(--wine-red);
-  color: var(--snow);
-  padding: 1em 2em;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-}
-
-.countdown-display {
-  font-size: 65px;
-  margin: 0;
-}
-
-.countdown-container {
-  display: flex;
-  gap: 15px;
-}
-
-.hours-minutes-seconds-container {
-  display: flex;
-  gap: 5px;
-}
-
-.hours-minutes-seconds-container div {
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 170px;
 }
 
-/* dialog styles */
-
-#dialog-container {
-  width: 400px;
-  margin-bottom: 20px;
-  background-color: var(--gold);
-  color: var(--snow);
-  padding: 20px;
-  box-sizing: border-box;
-  transition: width 0.5s;
+.button {
+  padding: 20px 35px;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--btn-color);
+  background-color: var(--btn-bg);
+  border: 4px transparent solid;
+  border-image: linear-gradient(
+      115deg,
+      var(--grad-color1),
+      var(--grad-color2),
+      var(--grad-color3),
+      var(--grad-color4),
+      var(--grad-color5)
+    )
+    1;
+  border-image-slice: 1;
+  transition: all 0.3s ease;
 }
 
-#countdown-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: left;
-}
-
-#countdown-title {
-  text-transform: capitalize;
-}
-
-.btn {
-  padding: 16px 32px;
-  background-color: var(--light-green);
-  border: none;
-  color: var(--snow);
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 15px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-
-  transition: scale 0.5s;
-}
-
-.btn:active {
-  scale: 98%;
-}
-
-#countdown-form input {
-  padding: 16px;
-  width: 100%;
-  border: none;
-  border-radius: 4px;
-}
-
-@media only screen and (max-width: 720px) {
-  .countdown-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.button:hover {
+  border-image: linear-gradient(
+      -115deg,
+      var(--grad-color1),
+      var(--grad-color2),
+      var(--grad-color3),
+      var(--grad-color4),
+      var(--grad-color5)
+    )
+    1;
+  transform: scale(1.05);
+  color: var(--btn-color-hover);
 }
