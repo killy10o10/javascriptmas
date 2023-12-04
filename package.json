@@ -1,6 +1,9 @@
 {
   "name": "project",
-  "dependencies": {},
+  "dependencies": {
+    "openai": "4.19.0",
+    "@huggingface/inference": "2.6.1"
+  },
   "devDependencies": {
     "vite": "latest"
   },

@@ -2,24 +2,35 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <title></title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,800;1,200&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+	<title>Christmas Joke</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Coiny&family=Poppins:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="button-border">
-            <button type="button" class="button">
-                JavaScriptmas!
-            </button>
-        </div>
-    </div>
+	<div>
+		<button id="get-joke">Get Joke</button>
+	</div>
+
+	<main>
+		<div id="window-container">
+			<section class="left-door">
+				<img src="left-door-min.png">
+			</section>
+			<section class="joke-display">
+				<h1 id="joke-display">
+					Santa gave me a book on anti-gravity. It's impossible to put down.
+				</h1>
+			</section>
+			<section class="right-door">
+				<img src="right-door-min.png">
+			</section>
+		</div>
+	</main>
+	<script src="index.js" type="module"></script>
 </body>
 
 </html>

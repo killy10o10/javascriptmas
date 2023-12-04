@@ -1,64 +1,154 @@
+:root {
+  --radius: 5px;
+  --main-frame: 15px solid white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
 }
 
-:root {
-  --font-family: 'Karla', sans-serif;
-  --body-bg: #1e1f25;
-  --btn-bg: #000;
-  --btn-color: #cbcbcb;
-  --btn-color-hover: #fff;
-  --grad-color1: #eeaf61;
-  --grad-color2: #fb9062;
-  --grad-color3: #ee5d6c;
-  --grad-color4: #ce4993;
-  --grad-color5: #6a0d83;
-}
-
 body {
-  background-color: var(--body-bg);
-}
-
-.container {
-  height: 100dvh;
+  background-image: url('/xmas-bg3.png');
+  background-size: cover;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+}
+
+#window-container {
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#get-joke {
+  padding: 10px 20px;
+  background-color: #ff6347; /* Christmas Red */
+  color: #ffffff; /* White */
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#get-joke:hover {
+  background-color: #e71823;
+  transition: 0.5s all;
+}
+
+img {
+  height: 450px;
+  display: block;
+}
+
+.left-door {
+  border: var(--main-frame);
+  border-right: 0;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+.left-door img {
+  border-right: 0;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+.right-door {
+  border: var(--main-frame);
+  border-left: 0;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.right-door img {
+  border-left: 0;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.left-door,
+.right-door,
+.joke-display {
+  transition: transform 0.3s ease;
+}
+
+.joke-display {
+  position: absolute;
+  background-color: white;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.button {
-  padding: 20px 35px;
-  font-size: 2rem;
   text-align: center;
-  color: var(--btn-color);
-  background-color: var(--btn-bg);
-  border: 4px transparent solid;
-  border-image: linear-gradient(
-      115deg,
-      var(--grad-color1),
-      var(--grad-color2),
-      var(--grad-color3),
-      var(--grad-color4),
-      var(--grad-color5)
-    )
-    1;
-  border-image-slice: 1;
-  transition: all 0.3s ease;
+  border: var(--main-frame);
+  height: 100%;
+  padding: 1em;
+  cursor: pointer;
 }
 
-.button:hover {
-  border-image: linear-gradient(
-      -115deg,
-      var(--grad-color1),
-      var(--grad-color2),
-      var(--grad-color3),
-      var(--grad-color4),
-      var(--grad-color5)
-    )
-    1;
-  transform: scale(1.05);
-  color: var(--btn-color-hover);
+/* animation */
+
+@keyframes display-joke {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes left-open {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes right-open {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes left-close {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes right-close {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
